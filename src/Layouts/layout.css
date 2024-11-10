@@ -1,0 +1,28 @@
+.rootLayout {
+  height: 100vh;
+  padding: 16px 24px;
+  display: flex;
+  flex-direction: column;
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      span {
+        font-size: 1.6rem;
+        font-weight: 600;
+      }
+    }
+  }
+
+  main {
+    flex: 1;
+    overflow: hidden;
+  }
+}
