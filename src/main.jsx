@@ -9,6 +9,7 @@ import SigninPage from "./Routes/SigninPage";
 import SignupPage from "./Routes/SignupPage";
 import RootLayout from "./Layouts/RootLayout";
 import DashboardLayout from "./Layouts/DashboardLayout";
+import Dashboardpage from "./Routes/Dashboardpage";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         element: <DashboardLayout />,
         children: [
+          {
+            path: "dashboard",
+            element: <Dashboardpage />,
+          },
           {
             path: "/chat/:id",
             element: <Chat />,

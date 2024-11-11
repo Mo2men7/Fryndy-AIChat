@@ -28,7 +28,7 @@ function Layout() {
           </Link>
           <div>
             <SignedOut>
-              <SignInButton />
+              <SignInButton className="signInButton" mode="modal" />
             </SignedOut>
             <SignedIn>
               <UserButton />
