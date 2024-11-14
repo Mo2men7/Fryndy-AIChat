@@ -1,38 +1,8 @@
-.rootLayout {
-  height: 100vh;
-  padding: 16px 24px;
-  display: flex;
-  flex-direction: column;
-
-  nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-
-      span {
-        font-size: 1.6rem;
-        font-weight: 600;
-      }
-    }
-  }
-
-  main {
-    flex: 1;
-    overflow: hidden;
-  }
-}
-
 .signInButton {
-  padding: 10px 20px;
-  border: 2px solid #2c2c2c;
-  background-color: #1a1a1a;
+  padding: 5px 20px;
+  border: 2px solid rgb(170, 104, 228);
+  background-color: rgb(147 51 233);
   color: #ffffff;
-  /* font-size: 1.2rem; */
   cursor: pointer;
   border-radius: 30px;
   transition: all 0.4s ease;
@@ -51,8 +21,8 @@
   height: 100%;
   background: radial-gradient(
     circle,
-    rgba(255, 255, 255, 0.25) 0%,
-    rgba(255, 255, 255, 0) 70%
+    rgba(170, 104, 228, 0.25) 0%,
+    rgba(170, 104, 228, 0) 70%
   );
   transform: scale(0);
   transition: transform 0.5s ease;
@@ -63,6 +33,6 @@
 }
 
 .signInButton:hover {
-  border-color: #666666;
+  border-color: rgb(170, 104, 228);
   background: #292929;
 }
