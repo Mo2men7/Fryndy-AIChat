@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useLocation } from "react-router-dom";
 import { BiMessageSquareDots } from "react-icons/bi";
 import {
   ClerkProvider,
@@ -16,19 +16,18 @@ if (!PUBLISHABLE_KEY) {
   throw new Error("Missing Publishable Key");
 }
 function Layout() {
+  const { pathname } = useLocation();
   return (
     <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
-      <div className="h-[50rem] w-full dark:bg-black bg-white  dark:bg-dot-white/[0.2] bg-dot-black/[0.2] relative flex items-center justify-center">
-        <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
-
-        <div className="rootLayout z-20">
-          <nav className="flex items-center justify-between">
-            <Link to="/" className="flex items-center gap-2 text-2xl">
-              <span className="text-purple-500">
-                <BiMessageSquareDots />
-              </span>
-              <span>FRYNDLY</span>
-            </Link>
+      <div className="z-20">
+        <nav className="flex items-center justify-between py-3 px-10 bg-black sticky top-0 z-30">
+          <Link to="/" className="flex items-center gap-2 text-2xl">
+            <span className="text-purple-500">
+              <BiMessageSquareDots />
+            </span>
+            <span>FRYNDLY</span>
+          </Link>
+          {!pathname.includes("sign") && (
             <div>
               <SignedOut>
                 <SignInButton className="signInButton" mode="modal" />
@@ -37,11 +36,11 @@ function Layout() {
                 <UserButton />
               </SignedIn>
             </div>
-          </nav>
-          <main className="flex-1 overflow-hidden">
-            <Outlet />
-          </main>
-        </div>
+          )}
+        </nav>
+        <main className="flex-1 overflow-hidden">
+          <Outlet />
+        </main>
       </div>
     </ClerkProvider>
   );
