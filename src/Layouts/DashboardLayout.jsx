@@ -1,6 +1,7 @@
 import { useAuth } from "@clerk/clerk-react";
 import { useEffect } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
+import ChatList from "../components/ChatList";
 
 function DashboardLayout() {
   const { userId, isLoaded } = useAuth();
@@ -17,9 +18,11 @@ function DashboardLayout() {
   }
 
   return (
-    <div>
-      <div className="sidebar">Sidebar Menu</div>
-      <div className="content">
+    <div className="flex gap-10 h-screen">
+      <div className="flex-1 bg-black pt-5 px-3">
+        <ChatList />
+      </div>
+      <div className="flex-[4] pt-5 px-3">
         <Outlet />
       </div>
     </div>
